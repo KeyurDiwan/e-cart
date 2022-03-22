@@ -1,5 +1,4 @@
 import React from 'react'
-import './done.css'
 
 const Done = () => {
     return (
