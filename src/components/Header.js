@@ -24,7 +24,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">Shopping Cart</Link>
+          <Link to="/">E -  Cart</Link>
         </Navbar.Brand>
         {useLocation().pathname.split("/")[1] !== "cart" && (
           <Navbar.Text className="search">
@@ -44,13 +44,16 @@ const Header = () => {
           </Navbar.Text>
         )}
         <Nav>
-          <Dropdown alignRight>
+          <Dropdown style = {{minWidth: 370}} >
             <Dropdown.Toggle variant="success">
-              <FaShoppingCart color="white" fontSize="25px" />
+              <FaShoppingCart color="white" fontSize="20px" />
               <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{ minWidth: 370 }}>
+            <Dropdown.Menu style={{
+            
+           
+            }} >
               {cart.length > 0 ? (
                 <>
                   {cart.map((prod) => (
@@ -74,6 +77,10 @@ const Header = () => {
                           })
                         }
                       />
+
+                    
+
+                      
                     </span>
                   ))}
                   <Link to="/cart">

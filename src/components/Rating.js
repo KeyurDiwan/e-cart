@@ -11,7 +11,7 @@ const Rating = ({ rating, onClick, style }) => {
             <AiOutlineStar fontSize="15px" />
           )}
         </span>
-      ))} 
+      ))}
     </>
   );
 };

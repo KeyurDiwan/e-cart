@@ -1,4 +1,5 @@
 import { Card, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
 
@@ -47,7 +48,17 @@ const SingleProduct = ({ prod }) => {
             >
               {!prod.inStock ? "Out of Stock" : "Add to Cart"}
             </Button>
+
+               
+
+              
           )}
+
+      <Link to="/done">
+                    <Button style={{  margin: "0 5px" , background: "green"}}>
+                    Buy Now
+                    </Button>
+                  </Link>
         </Card.Body>
       </Card>
     </div>
