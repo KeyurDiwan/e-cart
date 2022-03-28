@@ -21,11 +21,18 @@ const Header = () => {
   } = CartState();
 
   return (
+
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
-      <Container>
-        <Navbar.Brand>
-          <Link to="/">E -  Cart</Link>
+      <div>
+        <Navbar.Brand className="header-1" style = {{
+          marginTop:'20px'
+        }}> 
+       
+ <Link to="/" >E -  Cart</Link>
+         
+         
         </Navbar.Brand>
+        
         {useLocation().pathname.split("/")[1] !== "cart" && (
           <Navbar.Text className="search">
             <FormControl
@@ -44,8 +51,13 @@ const Header = () => {
           </Navbar.Text>
         )}
         <Nav>
-          <Dropdown style = {{minWidth: 370}} >
-            <Dropdown.Toggle variant="success">
+
+          <Dropdown style = {{minWidth: 370,
+           marginLeft: "1250px",
+           marginTop: "-2.5vmax"}} >
+            <Dropdown.Toggle variant="success"  style = {{
+             marginLeft: "400px"
+            }}>
               <FaShoppingCart color="white" fontSize="20px" />
               <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
@@ -90,12 +102,14 @@ const Header = () => {
                   </Link>
                 </>
               ) : (
-                <span style={{ padding: 10 }}>Cart is Empty!</span>
+                <span style={{ 
+                  padding: "2.2vmax",
+                 }}> Your Cart is Empty Please Add something to your cart!</span>
               )}
             </Dropdown.Menu>
           </Dropdown>
         </Nav>
-      </Container>
+      </div>
     </Navbar>
   );
 };

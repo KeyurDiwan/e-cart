@@ -1,17 +1,32 @@
 import { Button, Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
+import{useState} from 'react';
 import Rating from "./Rating";
 
 const Filters = () => {
   const {
     productDispatch,
-    productState: {  byFastDelivery, sort, byRating },
+    productState: {  byFastDelivery, sort, byRating, byCat },
   } = CartState();
 
   // make state for rating
 
+
+
+
+
+ 
+
+
   return (
     <div className="filters">
+
+      {/*  */}
+
+ 
+
+{/*  */}
+
       <span className="title">Sorting and Filters</span>
       <span>
         <Form.Check
@@ -45,21 +60,7 @@ const Filters = () => {
           checked={sort === "highToLow" ? true : false}
         />
       </span>
-      {/* <span>
-        <Form.Check
-          inline
-          label="Include Out of Stock"
-          name="group1"
-          type="checkbox"
-          id={`inline-3`}
-          onChange={() =>
-            productDispatch({
-              type: "FILTER_BY_STOCK",
-            })
-          }
-          checked={byStock}
-        />
-      </span> */}
+     
       <span>
         <Form.Check
           inline
@@ -75,6 +76,24 @@ const Filters = () => {
           checked={byFastDelivery}
         />
       </span>
+
+
+      {/* <span>
+        <Form.Check
+          inline
+          label="mobile Only"
+          name="group1"
+          type="checkbox"
+          id={`inline-5`}
+          onChange={() =>
+            productDispatch({
+              type: "SORT_BY_CAT",
+            })
+          }
+          checked={byCat}
+        />
+      </span> */}
+
       <span>
         <label style={{ paddingRight: 10 }}>Rating: </label>
         <Rating
@@ -88,6 +107,8 @@ const Filters = () => {
           style={{ cursor: "pointer" }}
         />
       </span>
+
+     
       <Button
         variant="light"
         onClick={() =>

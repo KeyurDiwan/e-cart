@@ -6,16 +6,23 @@ import { CartState } from "../context/Context";
 import Rating from "./Rating";
 
 const Cart = () => {
+
+  const [num, setNum] = useState(0);
   const {
     state: { cart },
     dispatch,
   } = CartState();
+  
   const [total, setTotal] = useState();
 
   useEffect(() => {
     setTotal(
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );
+
+    setNum(
+      cart.reduce((acc, curr) => acc + Number(curr.qty), 0)
+    )
   }, [cart]);
 
   return (
@@ -40,6 +47,7 @@ const Cart = () => {
                     as="select"
                     value={prod.qty}
                     onChange={(e) =>
+                      
                       dispatch({
                         type: "CHANGE_CART_QTY",
                         payload: {
@@ -74,7 +82,7 @@ const Cart = () => {
         </ListGroup>
       </div>
       <div className="filters summary">
-        <span className="title">Subtotal ({cart.length}) items</span>
+        <span className="title">Subtotal ({num}) items</span>
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: ₹ {total}</span>
        
 

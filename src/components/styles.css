@@ -1,12 +1,38 @@
+
+* {
+  max-width: 100%;
+}
+
 /* header styles */
+
 
 .header {
   display: block;
-  text-align: center;
+  text-align: left;
   font-size: 30px;
   margin: 10px 0;
 }
 
+.header-1 {
+  margin-left: 5px;
+  margin-top: 10px;
+}
+
+.del-tag  {
+width: 27%;
+margin-left: 70%;
+margin-top: 1%;
+
+
+} 
+
+.search {
+  margin-left:30%;
+}
+
+.dropdown{
+  margin-left: 90%;
+}
 .cartitem {
   display: flex;
   align-items: flex-start;
@@ -34,6 +60,7 @@
 
 .home {
   display: flex;
+  flex: 1;
 }
 
 .filters {
@@ -60,7 +87,7 @@
   width: 78%;
   padding: 20px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: flex-start;
 }
 
 .products {
@@ -100,4 +127,57 @@
   .products {
     width: 100%;
   }
+}
+
+
+
+
+
+/* --- */
+
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25%;
+  height: 150px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  transition: all 175ms ease-in-out;
+}
+
+.product-details:hover {
+  color: #fff;
+  border-color: rgba(0, 174, 255, 0.5);
+  background-color: rgba(0, 174, 255, 0.5);
+}
+
+.product-details:hover.checked {
+  border-color: #00aeff;
+  background-color: #00aeff;
+}
+
+.checked {
+  position: relative;
+  color: #fff;
+  border-color: #00aeff;
+  background-color: #00aeff;
+}
+
+.checked:after {
+  position: absolute;
+  z-index: 2;
+  top: -15px;
+  right: -15px;
+  padding: 5px;
+  font-size: 70%;
+  border-radius: 4px;
+  background-color: tomato;
+  content: "Selected";
 }
