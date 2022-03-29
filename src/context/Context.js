@@ -6,18 +6,7 @@ const Cart = createContext();
 // faker.seed(99);
 
 const Context = ({ children }) => {
-  const products2 = [...Array(7)].map(() => ({
-    id: faker.datatype.uuid(),
-    name: faker.commerce.productName(),
-    price: faker.commerce.price(),
-    image: faker.random.image(),
-    inStock: faker.random.arrayElement([0, 3, 5, 6, 7]),
-    fastDelivery: faker.datatype.boolean(),
-    ratings: faker.random.arrayElement([1, 2, 3, 4, 5]),
-  }
- 
   
-  ));
 
   
 
@@ -30,7 +19,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-      cat: "mobile",
+     
 
     },
 
@@ -42,7 +31,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 2,
-      cat: "mobile",
+     
       
     },
 
@@ -54,7 +43,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-      cat: "abc",
+     
       
     },
 
@@ -66,7 +55,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-      cat: "xyz",
+     
       
     },
 
@@ -81,7 +70,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-      cat: "xyz",
+     
       
     },
   
@@ -94,7 +83,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-      cat: "xyz",
+     
       
     },
   
@@ -107,7 +96,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-      cat: "xyz",
+      
       
     },
   
@@ -120,7 +109,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-      cat: "xyz",
+     
       
     },
   
@@ -133,7 +122,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-      cat: "xyz",
+    
       
     },
   
@@ -146,8 +135,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-      cat: "xyz",
-      
+     
     },
   
 
@@ -159,7 +147,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 2,
-      cat: "xyz",
+      
       
     },
   
@@ -172,7 +160,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-      cat: "xyz",
+     
       
     },
   
@@ -185,7 +173,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-      cat: "xyz",
+     
       
     },
   
@@ -198,7 +186,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 2,
-      cat: "xyz",
+     
       
     },
   
@@ -211,7 +199,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 5,
-      cat: "xyz",
+    
       
     },
   
@@ -224,7 +212,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 4,
-      cat: "xyz",
+     
       
     },
   
@@ -237,7 +225,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-      cat: "xyz",
+     
       
     },
   
@@ -250,7 +238,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-      cat: "xyz",
+     
       
     },
     {
@@ -261,7 +249,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 1,
-      cat: "xyz",
+      
       
     },
   
