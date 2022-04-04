@@ -1,15 +1,10 @@
 import { createContext, useContext, useReducer } from "react";
-import faker from "faker";
 import { cartReducer, productReducer } from "./Reducers";
 
 const Cart = createContext();
-// faker.seed(99);
 
 const Context = ({ children }) => {
   
-
-  
-
   let products = [
     {
       id: 1,
@@ -19,8 +14,6 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-     
-
     },
 
     {
@@ -31,8 +24,6 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 2,
-     
-      
     },
 
     {
@@ -43,8 +34,6 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-     
-      
     },
 
     {
@@ -55,13 +44,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-     
-      
     },
-
-  
-  
-
+    
     {
       id: 5,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II MASK",
@@ -70,11 +54,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-     
-      
     },
-  
-
+    
     {
       id: 6,
       name: "UNISEX REEBOK CLASSICS PRINCE REEBOK DUFFEL BAG",
@@ -83,11 +64,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-     
-      
     },
-  
-
+    
     {
       id: 7,
       name: "WOMEN'S REEBOK CLASSICS PRINCE REEBOK CROP TOP",
@@ -96,11 +74,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-      
-      
     },
-  
-
+    
     {
       id: 8,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II JACKET",
@@ -109,11 +84,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-     
-      
     },
-  
-
+    
     {
       id: 9,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II SHOES",
@@ -122,11 +94,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-    
-      
     },
-  
-
+    
     {
       id: 10,
       name: "UNISEX REEBOK TRAINING TECH STYLE WATER BOTTLE",
@@ -135,10 +104,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 4,
-     
     },
-  
-
+    
     {
       id: 11,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II CAP",
@@ -147,11 +114,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 2,
-      
-      
     },
-  
-
     {
       id: 12,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II BAG",
@@ -160,11 +123,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-     
-      
     },
-  
-
+    
     {
       id: 13,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II JACKET",
@@ -173,11 +133,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 5,
-     
-      
     },
   
-
     {
       id: 14,
       name: "WOMEN'S REEBOK TRAINING UNITED",
@@ -186,10 +143,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 2,
-     
-      
     },
-  
 
     {
       id: 15,
@@ -199,10 +153,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 5,
-    
-      
     },
-  
 
     {
       id: 16,
@@ -212,10 +163,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 4,
-     
-      
     },
-  
 
     {
       id: 17,
@@ -225,10 +173,7 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: true,
       ratings: 1,
-     
-      
     },
-  
 
     {
       id: 18,
@@ -238,9 +183,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 3,
-     
-      
     },
+
     {
       id: 19,
       name: "UNISEX REEBOK RUNNING ZIG KINETICA II TOP",
@@ -249,15 +193,8 @@ const Context = ({ children }) => {
       inStock: 5,
       fastDelivery: false,
       ratings: 1,
-      
-      
     },
-  
-  
   ]
-
-  // console.log(Cart)
-
   const [state, dispatch] = useReducer(cartReducer, {
     products: products,
     cart: [],
@@ -270,10 +207,6 @@ const Context = ({ children }) => {
     searchQuery: "",
     byCat: false,
   });
-
-  // console.log(products);
-  // console.log(products1);
-
 
   return (
     <Cart.Provider value={{ state, dispatch, productState, productDispatch }}>

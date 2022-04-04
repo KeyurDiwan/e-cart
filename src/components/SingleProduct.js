@@ -14,7 +14,11 @@ const SingleProduct = ({ prod }) => {
       <Card>
       {prod.fastDelivery ? (
              
-              <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEwl4DPR4h5lb8TtLv3sqluTmYJIFYLuiyXvQHcBVE5aQ36rIVnOHP16XNzbgV9JNe4w&usqp=CAU'} alt={"img"}  className = "del-tag"/>
+              <img 
+              src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwEwl4DPR4h5lb8TtLv3sqluTmYJIFYLuiyXvQHcBVE5aQ36rIVnOHP16XNzbgV9JNe4w&usqp=CAU'} 
+              alt={"img"}  
+              className = "del-tag"
+              />
        
             ) : (
           <div>   <br/>    <br/> </div>
