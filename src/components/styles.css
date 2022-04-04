@@ -1,10 +1,8 @@
-
 * {
   max-width: 100%;
 }
 
 /* header styles */
-
 
 .header {
   display: block;
@@ -15,23 +13,21 @@
 
 .header-1 {
   margin-left: 5px;
-  margin-top: 10px;
 }
 
-.del-tag  {
-width: 27%;
-margin-left: 70%;
-margin-top: 1%;
-
-
-} 
+.del-tag {
+  width: 27%;
+  margin-left: 70%;
+  margin-top: 1%;
+}
 
 .search {
-  margin-left:30%;
+  margin-left: 20vmax;
+  width: 25vmax;
 }
 
-.dropdown{
-  margin-left: 90%;
+.dropdown {
+  margin-left: 70%;
 }
 .cartitem {
   display: flex;
@@ -54,6 +50,29 @@ margin-top: 1%;
   flex: 1;
   padding: 0 20px;
   flex-direction: column;
+}
+
+.headerDiv {
+  display: flex;
+}
+
+.headerDiv div {
+  justify-content: center;
+}
+.dropDownMenu {
+  min-width: 500px;
+}
+
+.droDownDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  height: 80px;
+}
+.search-div-cart {
+  background-color: red;
 }
 
 /* Home Page */
@@ -115,27 +134,36 @@ margin-top: 1%;
     font-size: 18px !important;
   }
 
-
   .productContainer {
     width: 58%;
     padding: 0;
   }
 
-  .search {
-    display: none !important;
+  .search-div {
+    display: none;
   }
 
   .products {
     width: 100%;
   }
+  .dropDownMenu {
+    min-width: 300px;
+  }
 }
 
-
-
-
+@media (max-width: 1250px) {
+  .search-div {
+    width: 20%;
+  }
+  .dropdown {
+    margin-left: 80%;
+  }
+  .dropDownMenu {
+    min-width: 400px;
+  }
+}
 
 /* --- */
-
 
 .App {
   font-family: sans-serif;

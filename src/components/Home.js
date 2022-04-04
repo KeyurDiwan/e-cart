@@ -5,7 +5,14 @@ import SingleProduct from "./SingleProduct";
 const Home = () => {
   const {
     state: { products },
-    productState: { sort, byStock, byFastDelivery, byRating, searchQuery, byCat },
+    productState: {
+      sort,
+      byStock,
+      byFastDelivery,
+      byRating,
+      searchQuery,
+      byCat,
+    },
   } = CartState();
 
   const transformProducts = () => {
@@ -24,7 +31,6 @@ const Home = () => {
     if (byFastDelivery) {
       sortedProducts = sortedProducts.filter((prod) => prod.fastDelivery);
     }
-  
 
     if (byRating) {
       sortedProducts = sortedProducts.filter(
@@ -36,15 +42,12 @@ const Home = () => {
       sortedProducts = sortedProducts.filter((prod) =>
         prod.name.toLowerCase().includes(searchQuery)
       );
-
     }
 
-    if(byCat) {
-     
-
+    if (byCat) {
       sortedProducts = sortedProducts.filter((prod) =>
-      prod.cat.toLowerCase().includes("searchQuery")
-    );
+        prod.cat.toLowerCase().includes("searchQuery")
+      );
     }
 
     return sortedProducts;
@@ -52,16 +55,13 @@ const Home = () => {
 
   return (
     <div className="home">
-      
       <Filters />
-     
-     <div className="productContainer">
+
+      <div className="productContainer">
         {transformProducts().map((prod) => (
           <SingleProduct prod={prod} key={prod.id} />
         ))}
-     
       </div>
-    
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import { Button, Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
-import{useState} from 'react';
+import { useState } from "react";
 import Rating from "./Rating";
 
 const Filters = () => {
   const {
     productDispatch,
-    productState: {  byFastDelivery, sort, byRating, byCat },
+    productState: { byFastDelivery, sort, byRating, byCat },
   } = CartState();
 
   return (
@@ -44,7 +44,7 @@ const Filters = () => {
           checked={sort === "highToLow" ? true : false}
         />
       </span>
-     
+
       <span>
         <Form.Check
           inline
@@ -75,7 +75,6 @@ const Filters = () => {
         />
       </span>
 
-     
       <Button
         variant="light"
         onClick={() =>

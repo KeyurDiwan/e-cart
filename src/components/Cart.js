@@ -6,13 +6,12 @@ import { CartState } from "../context/Context";
 import Rating from "./Rating";
 
 const Cart = () => {
-
   const [num, setNum] = useState(0);
   const {
     state: { cart },
     dispatch,
   } = CartState();
-  
+
   const [total, setTotal] = useState();
 
   useEffect(() => {
@@ -20,17 +19,17 @@ const Cart = () => {
       cart.reduce((acc, curr) => acc + Number(curr.price) * curr.qty, 0)
     );
 
-    setNum(
-      cart.reduce((acc, curr) => acc + Number(curr.qty), 0)
-    )
+    setNum(cart.reduce((acc, curr) => acc + Number(curr.qty), 0));
   }, [cart]);
 
   return (
     <div className="home">
       <div className="productContainer">
-        <ListGroup style = {{
-          width: "98%"
-        }}>
+        <ListGroup
+          style={{
+            width: "98%",
+          }}
+        >
           {cart.map((prod) => (
             <ListGroup.Item key={prod.id}>
               <Row>
@@ -49,7 +48,6 @@ const Cart = () => {
                     as="select"
                     value={prod.qty}
                     onChange={(e) =>
-                      
                       dispatch({
                         type: "CHANGE_CART_QTY",
                         payload: {
@@ -86,14 +84,12 @@ const Cart = () => {
       <div className="filters summary">
         <span className="title">Subtotal ({num}) items</span>
         <span style={{ fontWeight: 700, fontSize: 20 }}>Total: ₹ {total}</span>
-       
 
-          <Link to="/done">
-                     <Button type="button" disabled={cart.length === 0}>
-          Proceed to Checkout
-        </Button>
-                  </Link>
-
+        <Link to="/done">
+          <Button type="button" disabled={cart.length === 0}>
+            Proceed to Checkout
+          </Button>
+        </Link>
       </div>
     </div>
   );

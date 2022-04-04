@@ -12,6 +12,7 @@ import {
 import { Link, useLocation } from "react-router-dom";
 import { CartState } from "../context/Context";
 import "./styles.css";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const {
@@ -19,53 +20,49 @@ const Header = () => {
     dispatch,
     productDispatch,
   } = CartState();
-
+  const [num, setNum] = useState(0);
+  useEffect(() => {
+    setNum(cart.reduce((acc, curr) => acc + Number(curr.qty), 0));
+  }, [cart]);
+  console.log(num);
   return (
+    <Navbar bg="dark" variant="dark" className="nav">
+      <div className="headerDiv">
+        <div>
+          <Navbar.Brand className="header-1">
+            <Link to="/">E - Cart</Link>
+          </Navbar.Brand>
+        </div>
 
-    <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
-      <div>
-        <Navbar.Brand className="header-1" style = {{
-          marginTop:'20px'
-        }}> 
-       
- <Link to="/" >E -  Cart</Link>
-         
-         
-        </Navbar.Brand>
-        
-        {useLocation().pathname.split("/")[1] !== "cart" && (
-          <Navbar.Text className="search">
-            <FormControl
-              style={{ width: 500 }}
-              type="search"
-              placeholder="Search a product..."
-              className="m-auto"
-              aria-label="Search"
-              onChange={(e) => {
-                productDispatch({
-                  type: "FILTER_BY_SEARCH",
-                  payload: e.target.value,
-                });
-              }}
-            />
-          </Navbar.Text>
-        )}
-        <Nav>
+        <div className="search-div">
+          {useLocation().pathname.split("/")[1] !== "cart" ? (
+            <Navbar.Text className="search">
+              <FormControl
+                type="search"
+                placeholder="Search a product..."
+                className="m-auto"
+                aria-label="Search"
+                onChange={(e) => {
+                  productDispatch({
+                    type: "FILTER_BY_SEARCH",
+                    payload: e.target.value.toLowerCase(),
+                  });
+                }}
+              />
+            </Navbar.Text>
+          ) : (
+            <div className="search"> </div>
+          )}
+        </div>
 
-          <Dropdown style = {{minWidth: 370,
-           marginLeft: "1250px",
-           marginTop: "-2.5vmax"}} >
-            <Dropdown.Toggle variant="success"  style = {{
-             marginLeft: "400px"
-            }}>
+        <div className="droDownDiv">
+          <Dropdown className="dropDownMenu">
+            <Dropdown.Toggle variant="success">
               <FaShoppingCart color="white" fontSize="20px" />
-              <Badge>{cart.length}</Badge>
+              <Badge>{num}</Badge>
             </Dropdown.Toggle>
 
-            <Dropdown.Menu style={{
-            
-           
-            }} >
+            <Dropdown.Menu className="menu-item">
               {cart.length > 0 ? (
                 <>
                   {cart.map((prod) => (
@@ -89,10 +86,6 @@ const Header = () => {
                           })
                         }
                       />
-
-                    
-
-                      
                     </span>
                   ))}
                   <Link to="/cart">
@@ -102,13 +95,18 @@ const Header = () => {
                   </Link>
                 </>
               ) : (
-                <span style={{ 
-                  padding: "2.2vmax",
-                 }}> Your Cart is Empty Please Add something to your cart!</span>
+                <span
+                  style={{
+                    padding: "2.2vmax",
+                  }}
+                >
+                  {" "}
+                  Your Cart is Empty Please Add something to your cart!
+                </span>
               )}
             </Dropdown.Menu>
           </Dropdown>
-        </Nav>
+        </div>
       </div>
     </Navbar>
   );
